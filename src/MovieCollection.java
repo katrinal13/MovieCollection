@@ -147,22 +147,6 @@ public class MovieCollection
       listToSort.set(possibleIndex, temp);
     }
   }
-
-  private void sortString(ArrayList<String> listToSort)
-  {
-    for (int j = 1; j < listToSort.size(); j++)
-    {
-      String temp = listToSort.get(j);
-
-      int possibleIndex = j;
-      while (possibleIndex > 0 && temp.compareTo(listToSort.get(possibleIndex - 1)) < 0)
-      {
-        listToSort.set(possibleIndex, listToSort.get(possibleIndex - 1));
-        possibleIndex--;
-      }
-      listToSort.set(possibleIndex, temp);
-    }
-  }
   
   private void displayMovieInfo(Movie movie)
   {
@@ -477,5 +461,19 @@ public class MovieCollection
   }
   
   // ADD ANY ADDITIONAL PRIVATE HELPER METHODS you deem necessary
+  private void sortString(ArrayList<String> listToSort)
+  {
+      for (int j = 1; j < listToSort.size(); j++)
+      {
+          String temp = listToSort.get(j);
 
+          int possibleIndex = j;
+          while (possibleIndex > 0 && temp.compareTo(listToSort.get(possibleIndex - 1)) < 0)
+          {
+              listToSort.set(possibleIndex, listToSort.get(possibleIndex - 1));
+              possibleIndex--;
+          }
+          listToSort.set(possibleIndex, temp);
+      }
+  }
 }
